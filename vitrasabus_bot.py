@@ -23,7 +23,7 @@ sys.setdefaultencoding("utf-8")
 db = MySQLdb.connect(host = 'localhost', user = 'root', db = 'vitrasa', charset = 'utf8')
 cur = db.cursor()
 logger = telebot.logger
-bus_bot = telebot.TeleBot('545892293:AAFfVqY5z3qt47eRoehrEkXnLqXkEIHvnsU')
+bus_bot = telebot.TeleBot('')
 
 telebot.logger.setLevel(logging.DEBUG)
 
@@ -267,12 +267,6 @@ def changelog(m):
     output += ' - Más rapidez de búsqueda de paradas\n'
     output += ' - Añadidos <b>9 millones</b> de lámparas LED 💡\n'
     bus_bot.send_message(m.chat.id, output, parse_mode = 'HTML')
-
-@bus_bot.message_handler(commands=['ip'])
-def get_ip(m):
-    if (int(time.time()) - time_ignore) > m.date:
-        return
-    bus_bot.send_message(m.chat.id, urlopen('http://ip.42.pl/raw').read())
 
 # main loop #########
 
