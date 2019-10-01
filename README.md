@@ -1,3 +1,4 @@
+**Update: This bot no longer works, as the bus stops API is no longer available**
 # Vitrasa Telegram bot
 Real-time data from Vigo buses, in a Telegram bot
 
